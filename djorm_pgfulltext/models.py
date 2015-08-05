@@ -282,7 +282,8 @@ class SearchQuerySet(QuerySet):
             ts_query = "%s('%s', '%s')" % (
                 function,
                 config,
-                psycopg2.extensions.adapt(force_text(query))
+                #psycopg2.extensions.adapt(
+                force_text(query)#)
             )
 
             full_search_field = "%s.%s" % (
